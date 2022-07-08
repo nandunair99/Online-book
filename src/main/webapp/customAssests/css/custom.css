@@ -1,0 +1,610 @@
+		a{
+			text-decoration: none;
+		}
+		/* to stick the thead(th) tag of view data table in table for scrolling */
+		thead {
+			background-color: white; 
+			border-bottom : 2px solid #495057; 
+			position: sticky;
+			top:0;
+		}
+		/* for scrollable view data */
+		.tableBox{
+			height: 200px; overflow:auto;display: block;
+		}
+		/* delete popup buttons */
+		.yesBtn,.noBtn{
+			margin: 10px;
+			padding: 5px 10px 5px 10px; 
+		}
+		.yesBtnCC,.noBtnCC{
+			margin: 10px;
+			padding: 5px 10px 5px 10px; 
+		}		
+		/* delete popup delete button */
+		.yesBtn{
+			background-color: #dc3545;
+			color: white;
+		}
+		/* delete popup cancel button */
+		.noBtn{
+			background-color: #6c757d;
+			color: white;
+		}
+		/* The Modal (background) */
+		.modal {
+  			display: none; /* Hidden by default */
+  			position: fixed; /* Stay in place */
+  			z-index: 1; /* Sit on top */
+  			padding-top: 100px; /* Location of the box */
+  			left: 0;
+  			top: 0;
+  			width: 100%; /* Full width */
+  			height: 100%; /* Full height */
+  			overflow: auto; /* Enable scroll if needed */
+  			background-color: rgb(0,0,0); /* Fallback color */
+ 	 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.modal-content {
+  			background-color: #fefefe;
+  			margin: auto;
+ 	 		padding: 20px;
+  			border: 1px solid #888;
+  			width: 50%;
+		}
+		.modal-content2 {
+			display: none;
+			justify-content: center;
+			align-items: center;
+		}
+		/* title of popup (msg)*/
+		.msg{
+			text-align: center;
+		}
+		/* The Close Button */
+		.close {
+			margin-top:-15px;
+  			color: #aaaaaa;
+  			float: right;
+  			font-size: 28px;
+  			font-weight: bold;
+		}
+
+		.close:hover,.close:focus {
+  			color: #000;
+  			text-decoration: none;
+  			cursor: pointer;
+		}
+		.delbtn:hover{
+			transition: transform .3s;
+			transform: scale(1.3);
+			color: red;
+			cursor: pointer;
+		}
+		.upbtn:hover{
+			transition: transform .3s;
+			transform: scale(1.3);
+			color: #3b7ddd;
+			cursor: pointer;
+		}
+		.viewbtn:hover{
+			transition: transform .3s;
+			transform: scale(1.3);
+			color: #17a2b8;
+			cursor: pointer;
+		}
+		.uprow-border{
+			background-color: #c4dbff;
+		}
+		.delrow-border{
+			background-color: #ffd6ba;
+		}
+		.errormsg
+		{
+			color:red;
+		}
+		.btnSCancel,.btnCCancel
+		{
+			display: none;
+		}
+		
+		.CastViewcard:hover
+		{
+			cursor: pointer;
+		}
+		.CastViewcard:hover .card-header
+		{
+			border-radius: 15px 15px 0px 0px;
+		  	transition: 0.2s;
+			margin-top:-20px;	
+		}
+		.actionDiv
+		{
+			margin-top:20px;
+			display: none;
+		}
+		.CastViewcard:hover .actionDiv
+		{
+			display: block;
+		}
+		.CastViewcard
+		{
+			height: 300px;
+			max-width: 160px;
+  			margin: .75rem;
+  			margin-bottom: 2rem;
+  			flex-basis: 160px;
+  			flex-grow: 0;
+  			flex-shrink: 0;
+    		float: none;
+    		text-align: center;
+    		align-content: center;
+    		transition: 0.2s;
+    		box-shadow: 2px 2px 10px #fff;
+		}
+		.CastViewcard:hover
+		{
+			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+		}
+		.NewCastViewcard
+		{
+			max-height: 300px;
+			max-width: 170px;
+  			margin: .75rem;
+  			margin-bottom: 2rem;
+  			flex-basis: 170px;
+  			flex-grow: 0;
+  			flex-shrink: 0;
+    		float: none;
+    		text-align: center;
+    		align-content: center;
+    		box-shadow: 2px 2px 10px #fff;
+    		transition: 0.2s;
+    		cursor:pointer;
+		}
+		.NewCastViewcardCrew
+		{
+			max-height: 300px;
+			max-width: 170px;
+  			margin: .75rem;
+  			margin-bottom: 2rem;
+  			flex-basis: 170px;
+  			flex-grow: 0;
+  			flex-shrink: 0;
+    		float: none;
+    		text-align: center;
+    		align-content: center;
+    		box-shadow: 2px 2px 10px #fff;
+    		transition: 0.2s;
+		}
+		.NewCastViewcard:hover
+		{
+			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+		}
+		.NewCastViewcard:hover .centerimg
+		{
+			color:#1cbb8c;
+			transform: scale(1.5);
+		}
+		.NewCastViewcard:hover .addnewtext
+		{
+			transform: scale(1.2);
+			color:#1cbb8c;
+		}
+		.cardRow{
+			height: 320px;
+			align-items: stretch;
+  			display: flex;
+  			flex-direction: row;
+  			flex-wrap: nowrap;
+  			overflow-x:hidden;
+  			overflow-y: hidden;
+  			scroll-behavior: smooth;
+  			transition: 0.2s;
+		}
+		.cardRowViewAll{
+			height: auto;
+			align-items: stretch;
+  			display: flex;
+  			flex-direction: row;
+  			flex-wrap: wrap;
+  			scroll-behavior: smooth;
+  			transition: 0.2s;
+		}
+		.cardRow:hover .sliderBtn
+		{
+			transition: 0.2s;
+			display: block;
+			background: red;
+		}
+		
+		.viewalltext{
+			display: inline-flex;float: right;
+			cursor: pointer;
+		}
+		/*for Insert-update-popup */
+		
+		/* The Modal (background) */
+		.InUpmodal {
+  			display: none; /* Hidden by default */
+  			position: fixed; /* Stay in place */
+  			z-index: 1; /* Sit on top */
+  			padding-top: 100px; /* Location of the box */
+  			left: 0;
+  			top: 0;
+  			width: 100%; /* Full width */
+  			height: 100%; /* Full height */
+  			overflow: auto; /* Enable scroll if needed */
+  			background-color: rgb(0,0,0); /* Fallback color */
+ 	 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.InUpmodal-content {
+  			background-color: #fefefe;
+  			margin: auto;
+ 	 		padding: 20px;
+  			border: 1px solid #888;
+  			width: 50%;
+		}
+		.InUpmodal-contentMovie{
+			margin-top:-70px;
+			background-color: #fefefe;
+  			margin-left:auto;
+  			margin-right:auto;
+ 	 		padding: 20px;
+  			border: 1px solid #888;
+  			width: 75%;
+		}
+		.InUpmodal-content2 {
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.InUpmodal-content2Movie {
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.InUpmsg{
+			text-align: center;
+		}
+		/* The Close Button */
+		.InUpclose {
+			margin-top:-15px;
+  			color: #aaaaaa;
+  			float: right;
+  			font-size: 28px;
+  			font-weight: bold;
+		}
+
+		.InUpclose:hover,.InUpclose:focus {
+  			color: #000;
+  			text-decoration: none;
+  			cursor: pointer;
+		}
+		.centerimg
+		{
+			transition: 0.2s;
+			transform: scale(1.3);
+			position:absolute;
+    		top:40%;
+    		left:47%;
+		}
+		.addnewtext
+		{
+			transition: 0.2s;
+		}
+		.dataviewposter
+		{
+			transition: 0.2s;
+			width:100px;
+			cursor: pointer;
+			border-radius:5px; 
+		}
+		.dataviewposter:hover {
+			transform: scale(1.5);
+			border-radius:0px; 
+ 			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+		}
+		.inputsearch{
+			outline: none;
+		}
+		.dataviewtop
+		{
+			margin-left:-25px;
+			margin-right:-10px;
+		 	list-style-type: none;
+		}
+		.dataviewtop > li
+		{
+			float:left;
+			padding: 0px 16px 0px 0px;
+		}
+		input:focus{
+    		outline: none;
+		}
+		.filterBtnInactive
+		{
+			border:1px solid #fcb92c;
+			color: #fcb92c;
+			cursor: pointer;
+			transition: 0.2s;
+		}
+		.filterBtnInactive:hover
+		{
+			background-color: #fcb92c;
+			color:white;
+		}
+		.filterBtnActive
+		{
+			border:1px solid #1cbb8c;
+			color: #1cbb8c;
+			cursor: pointer;
+			transition: 0.2s;
+		}
+		.filterBtnActive:hover
+		{
+			background-color: #1cbb8c;
+			color:white;
+		}
+		.filterBtnUpcoming
+		{
+			border:1px solid #3b7ddd;
+			color: #3b7ddd;
+			cursor: pointer;
+			transition: 0.2s;
+		}
+		.filterBtnUpcoming:hover
+		{
+			background-color: #3b7ddd;
+			color:white;
+		}
+		.blur{
+			filter: blur(2px);
+		}
+		.btnUpdateCity,.btnUpdateState,.btnUpdateCC,.upimgView,.btnUpdateMovie,.divStatus,.UpdateviewImgB,.updateImgB,.UpdateviewImgP,.updateImgP,.btnUpdate{
+			display: none;
+		}
+		.UpdateviewImgB,.UpdateviewImgP{
+			cursor: pointer;
+			background-color: #1cbb8c;
+			color:white;
+			padding: 3px 5px 3px 5px;
+			border-radius:3px; 
+		}
+		.updateImgB
+		{
+			width:30%;
+			position: absolute;
+			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+		}
+		.updateImgP{
+			width:15%;
+			position: absolute;
+			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+		}
+		.dataTitle
+		{
+			margin-top: 8px;
+		}
+		input[type="search"]::-webkit-search-cancel-button {
+  			display: none;
+  			
+		}
+		.elementToFadeInAndOut {
+    		-webkit-animation: fadeinout 2s linear infinite;
+    		animation: fadeinout 2s linear infinite;
+		}
+
+		@-webkit-keyframes fadeinout {
+  			0%,100% { opacity: 0; }
+  			50% { opacity: 1; }
+		}
+
+		@keyframes fadeinout {
+  			0%,100% { opacity: 0; }
+  			50% { opacity: 1; }
+		}
+		.upimgView{
+			margin-top:20px;
+			width: 100px;
+		}
+		.addCastCrew {
+  			list-style-type: none;
+		}
+		.addCastCrew li {
+  			border: 1px solid #ddd;
+  			/*margin-top: -1px; /* Prevent double borders */
+	 		background-color: #f6f6f6;
+  			text-decoration: none;
+  			color: black;
+			float: left;
+			height: 30px;
+    		padding: 5px;
+		}
+		.addCastCrew li:hover {
+  			background-color: #eee;	
+		}
+		.close {
+			margin:0;
+			margin-top: -13px;
+			padding:0;
+  			cursor: pointer;
+  			color:red;
+		}
+		.addCastCrewBtn{
+			padding: 2px 7px 2px 7px;
+			border-radius:3px;
+			cursor: pointer;
+			color:white;
+			background-color: #fcb92c;
+			transition: 0.2s;
+		}
+		.addCastCrewBtn:hover{
+			opacity: .65;
+		}
+		/* add cast crew popup*/
+		/* The Modal (background) */
+		.myModalCastCrew {
+  			display: none; /* Hidden by default */
+  			position: fixed; /* Stay in place */
+  			z-index: 2; /* Sit on top */
+  			padding-top: 100px; /* Location of the box */
+  			left: 0;
+  			top: 0;
+  			width: 100%; /* Full width */
+  			height: 100%; /* Full height */
+  			overflow: auto; /* Enable scroll if needed */
+  			background-color: rgb(0,0,0); /* Fallback color */
+ 	 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		/* Modal Content */
+		.modal-contentCastCrew {
+  			background-color: #fefefe;
+  			margin: auto;
+ 	 		padding: 20px;
+  			border: 1px solid #888;
+  			width: 40%;
+  			
+		}
+		.modal-content2CastCrew {
+			display: none;
+			justify-content: center;
+			align-items: center;
+		}
+		/* title of popup (msg)*/
+		.msgCastCrew{
+			text-align: center;
+		}
+		/* The Close Button */
+		.closeCastCrew {
+			margin-top:-15px;
+  			color: #aaaaaa;
+  			float: right;
+  			font-size: 28px;
+  			font-weight: bold;
+		}
+
+		.closeCastCrew:hover,.closeCastCrew:focus {
+  			color: #000;
+  			text-decoration: none;
+  			cursor: pointer;
+		}
+		li.last-child {
+ 	 		color: red;
+		}
+		.bannerBox
+		{
+			margin:0px;
+			height: 503px;
+			width: 100%;
+			position: relative;
+		}
+		.layer {
+    		background: rgb(255,255,255);
+			background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(33,32,32,1) 0%, rgba(15,15,15,1) 0%, rgba(0,0,0,0.8463760504201681) 35%, rgba(255,255,255,0) 68%);
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+		}
+		.posterImg{
+			height:297px;
+			width:220px;
+  			border-radius: 7px;
+		}
+		.movieData{
+			margin: 0;
+			margin-left:3%;
+			top: 50%;
+  			-ms-transform: translateY(-50%);
+  			transform: translateY(-50%);
+			position:absolute;
+			color:white;
+			width: 100%;
+		}
+		.dataContains{
+			margin-left: -70px;
+			margin-top: 20px;
+			color:white;
+		}
+		.dataContains > *{
+			color:white;
+		}
+		.dataContains > h1{
+			margin-top:5px;
+			color:white;
+			font-weight: 700;
+			font-size: xx-large;
+		}
+		.dataContains > h6 > span{
+			color:black;
+			background-color:white; 
+			padding: 3px 8px 3px 8px;
+			margin-right: 5px;
+		}
+		.movieDes
+		{
+			margin-left:3%;
+			margin-top: 30px;
+			width: 94%;
+		}
+		.imgPoster{
+			height: 150px;
+			width: 150px;
+			border-radius: 60%;
+			border: none;
+		}
+		.bannerBoxCinema
+		{
+			margin:0px;
+			height: 100%;
+			width: 100%;
+			position: relative;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			text-align: center;
+		}
+		.bannerBoxCinema > *
+		{
+			color:white;
+		}
+		.bannerBoxCinema > h2
+		{
+			margin-top: 80px;
+		}
+		.tableBoxUser{
+			height:auto;
+			padding:10px;
+			padding-bottom:20px;
+			max-height: 500px; 
+			overflow-x: hidden;
+ 			overflow-y: scroll;
+			display: block;
+		}
+		.span {
+  			height: 100%;
+  			display: inline-flex;
+  			align-items: center;
+		}
+		.userdiv
+		{
+			padding: 10px;
+			cursor: pointer;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+		.userdiv:hover
+		{
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		}
+		.userinfo,.cinemadiv{
+			display: none;
+		}
+		.addnewadmin:hover
+		{
+			background-color: #222e3c; color:white
+		}
+	
